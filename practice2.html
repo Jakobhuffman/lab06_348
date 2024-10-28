@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color and Border Control</title>
+    <style>
+        #colorBox {
+            padding: 20px;
+            border: 5px solid black; 
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Paragraph Color and Border Control</h1>
+    <div id="colorBox">
+        <p>You can change my background color and border width!</p>
+    </div>
+    
+    <h2>Adjust Colors and Border</h2>
+    <label for="rgbInput">Enter RGB values (comma-separated, 0-250):</label>
+    <input type="text" id="rgbInput" placeholder="R,G,B" />
+    
+    <label for="borderWidth">Border Width (in pixels):</label>
+    <input type="number" id="borderWidth" value="5" min="0" />
+
+    <button onclick="updateStyles()">Update</button>
+
+    <script>
+        function updateStyles() {
+            const rgbInput = document.getElementById("rgbInput").value;
+            const borderWidth = document.getElementById("borderWidth").value;
+            const colorBox = document.getElementById("colorBox");
+
+            // RGB input
+            const rgbValues = rgbInput.split(',').map(Number);
+            if (rgbValues.length === 3 && 
+                rgbValues.every(value => value >= 0 && value <= 255)) {
+                const rgbColor = `rgb(${rgbValues.join(',')})`;
+                colorBox.style.backgroundColor = rgbColor;
+                colorBox.style.borderColor = rgbColor;
+            } else {
+                alert("Please enter valid RGB values (0-255).");
+            }
+
+            //border width
+            colorBox.style.borderWidth = `${borderWidth}px`;
+        }
+    </script>
+</body>
+</html>

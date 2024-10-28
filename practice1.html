@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        /* CSS Profile Page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .profile-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        .profile-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #2266be;
+            margin-top: -80px;
+            background-color: #c2c2c2;
+        }
+        .profile-info {
+            padding: 20px;
+        }
+        .profile-info h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .profile-info p {
+            color: #666;
+        }
+        .profile-info a {
+            text-decoration: none;
+            color: #2266be;
+            font-weight: bold;
+        }
+        .contact-info, .projects {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .contact-info h2, .projects h2 {
+            color: #2266be;
+            font-size: 20px;
+            border-bottom: 2px solid #2266be;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Profile Picture -->
+        <img src="pumpkin2.jpg" alt="Profile Picture">
+
+        <!-- Profile Info -->
+        <div class="profile-info">
+            <h1>Jakob Huffman</h1>
+            <p>KU Computer Science Student</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Contact Info</h2>
+            <p><strong>Email:</strong> <a href="mailto:jakobhuffman00@gmail.com">jakobhuffman00@gmail.com</a></p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects">
+            <h2>Projects & Experience</h2>
+            <ul>
+                <li>Joined IEEE, working on building a cyberdeck</li>
+                <li>Worked on multiple school projects using Python and C</li>
+                <li>Completed online courses in Web Development and UX Design</li>
+            </ul>
+        </div>
+
+        <!-- JavaScript Greeting -->
+        <script>
+            function showGreeting() {
+                const now = new Date();
+                const hour = now.getHours();
+                let greeting;
+                
+                if (hour < 12) {
+                    greeting = "Good morning!";
+                } else if (hour < 18) {
+                    greeting = "Good afternoon!";
+                } else {
+                    greeting = "Good evening!";
+                }
+                
+                document.getElementById("greeting").innerText = greeting;
+            }
+            showGreeting();
+        </script>
+        <h2 id="greeting"></h2>
+
+        <!-- Embedded Video -->
+        <div class="video-container">
+            <h2>How to Make a Webpage</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FazgJVnrVuI?si=bGA3vpLnnS04lrwT" title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>

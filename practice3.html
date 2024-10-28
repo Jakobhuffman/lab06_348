@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Verification</title>
+    <style>
+        /* Styling for the password form */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input[type="password"], button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+        }
+    </style>
+    <script>
+        function verifyPassword() {
+            // Get the values from the input fields
+            const password1 = document.getElementById("password1").value;
+            const password2 = document.getElementById("password2").value;
+
+            // Check if the password meets the length requirement
+            if (password1.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return;
+            }
+
+            // Check if both passwords match
+            if (password1 !== password2) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            // Success message if validation passes
+            alert("Passwords match.");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Verification</h1>
+        <input type="password" id="password1" placeholder="Enter password">
+        <input type="password" id="password2" placeholder="Re-enter password">
+        <button onclick="verifyPassword()">Verify Password</button>
+    </div>
+</body>
+</html>
